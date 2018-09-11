@@ -1,3 +1,38 @@
 page-home {
+    .location{
+        font-size:10px; 
+        text-align: center; 
+        color:white;
+    }
+    .home{
+        background-image: url('../assets/imgs/bkpic1.jpg');
+        background-repeat: no-repeat;
+       background-position:center;
+         background-size: 25cm;
+       
 
+    }
+    .container {
+        background-color: rgba(0.0,0.0,0.0,0.4);
+        border-radius: 10px;
+        margin-top: 20%;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding:20px;
+        box-shadow: none;
+        
+    }
+    
+    .item{
+        background-color:transparent; 
+        color:whitesmoke;
+    }
+    
+    .btnSearch{
+        background-color:#435d8c;
+    }
+    .label{
+      
+        color:white;
+    }
 }

@@ -1,14 +1,124 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="sec">
     <ion-title>
-      Ionic Blank
+     weather app 
     </ion-title>
   </ion-navbar>
-</ion-header>
+</ion-header>      
+<ion-content padding class="home">
+    <ion-list >
+        <ion-item class="btnSearch">
+          <ion-label style="color:white">Cities</ion-label>
+          <ion-select [(ngModel)]='city' (ionChange)="getweatherLocation($event)">
+            <ion-option value="Johannesburg">Johannesburg</ion-option>
+            <ion-option value="Bloemfontein">Bloemfontein</ion-option>
+            <ion-option value="Nelspruit">Nelspruit</ion-option>
+            <ion-option value="Polokwane">Polokwane</ion-option>
+            <ion-option value="Rustenburg">Rustenburg</ion-option>
+            <ion-option value="Soweto">Soweto</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list> 
+    
+      <!-- <img src= './assets/imgs/bkpic1.jpg'> -->
+    <ion-list>
+        <div class="container">
+      <ion-item class="item">
+        <strong>Main Weather:</strong> {{main}}
+        <ion-icon name="sunny" item-left></ion-icon>
+      </ion-item>
+    
+      <ion-item  text-wrap class="item">
+        <strong>Description:</strong> {{description}}
+        <ion-icon name="desktop" item-left></ion-icon>
+      </ion-item>
+    
+      <ion-item class="item">
+        <strong>Temperature:</strong> {{temperature | number:0}}&deg;C
+        <ion-icon name="thermometer" item-left></ion-icon>
+      </ion-item>
+    
+      <ion-item class="item">
+      <ion-icon name="aperture" item-left></ion-icon>
+        <strong>Humidity:</strong> {{humidity}}%
+      </ion-item>
+    
+      <ion-item  class="item">
+       <ion-icon name="color-wand" item-left></ion-icon>
+      <strong>Wind Speed:</strong> {{windSpeed}} km/h
+      </ion-item>
+    
+      <ion-item  class="item">
+      <ion-icon name="calendar" item-left></ion-icon>
+      <strong>Date:</strong> {{date * 1000 | date}}
+      </ion-item>
+      </div>
+    </ion-list>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
-</ion-content>
+
+
+
+
+
+
+
+     <!-- <ion-row>
+        <ion-item>
+          <ion-label fixed class="label" style="color:white">search</ion-label>
+          <ion-input type="text" style="color:black" [(ngModel)]="city"></ion-input>
+          
+        </ion-item>
+        <button ion-button full  class="btnSearch" (click)="getweatherLocation()"> <ion-icon name="search"></ion-icon></button>
+     
+     
+      </ion-row>
+     
+      
+    <ion-grid *ngIf="weather">
+      <ion-row>
+        
+     
+        <ion-col width-50 offset-25>
+            <h1 class="location">{{city}}</h1>
+          <h2 class="location" >{{weather.weather[0].main}}</h2> 
+        </ion-col>
+      </ion-row>
+  
+      <div class="container">
+      <ion-row>
+        <ion-col width-100>
+  
+          <ion-list no-lines>
+  
+            <ion-item class="items">
+               
+                <ion-icon name="thermometer" item-start></ion-icon>
+              <strong>Temp:</strong>
+              {{weather.main.temp-273.15|number:0}}&deg;
+            </ion-item>
+            <ion-item >
+                <ion-icon name="body" item-start>
+                  
+                </ion-icon>
+                <strong>Humidity:</strong>{{weather.main.humidity}}
+              </ion-item >
+              
+                <ion-item text-wrap>
+                    <ion-icon name="book" item-start></ion-icon>
+                    <strong>description:</strong>{{description}}
+                  </ion-item>
+                  <ion-item >
+                      <ion-icon name="ios-compass-outline" item-start></ion-icon>
+                      <strong>wind speed:</strong>{{weather.wind.speed}}
+                    </ion-item>
+                  <ion-item>
+                      <ion-icon name="clock" item-start></ion-icon>
+                    <strong>date:</strong>{{date * 1000 |date}}
+                  </ion-item>
+                 
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </div>
+    </ion-grid> -->
+  </ion-content>
